@@ -14,6 +14,11 @@ The Product resource lets you update and create products in a WIZWID's store
 
 To create an Product, do a POST request to the above method with the parameters below.
 
+1. WIZWID Category must be mapped
+   - http://api.wizwid.com/API/handler/wizwid/kr/Category-Search
+2. WIZWID Brand must be mapped
+   -  http://api.wizwid.com/API/handler/wizwid/kr/Brand-Search
+   
 ###### Params
 
 - `Product` 
