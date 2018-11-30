@@ -47,36 +47,53 @@ To create an Product, do a POST request to the above method with the parameters 
 ###### Example  request
 
 ```
-curl -H "Content-Type: application/json" -X POST -d "{ 
-  'expected_price': {
-    'item_total': 143.0,
-    'local_tax_total': 10.0,
-    'local_shipment_total': 10.0,
-  },
-  'order_reference': 'C434743',
-  'address': {
-    'first_name': 'John',
-    'last_name': 'Doe',
-    'locker_id': 'C434743', # we could use order_reference here?
-    'address': '2344 Main Street',
-    'city': 'Portland',
-    'state': 'OR',
-    'zip': '92703',
-    'phone': '500500500',
-  },
-  'product': {
-    "selected_options": { "option": "Default" },
-    "url": "https://www.thinkgeek.com/product/iiur/?pfm=HP_ProdTab_2_3_Bestsellers_iiur"
-  },
-  'card_details': {
-    'card_type' : 'Mastercard'
-    'card_name': 'Test Name',
-    'card_number': '4111111111111111',
-    'cvv': '123',
-    'expiry_date_month': '12',
-    'expiry_date_year': '2020'
-  }
-}" https://api.snapi.global/orders.json
+curl -H "Content-Type: application/json" -X POST -d 
+'{"Product":
+	[
+		{
+			"store_product_id":"11365"
+			"name":"Phyliss Heart Pointelle",
+			"description":"description TEST",
+			"original_price":"253.00",
+			"offering_price":"253.00",
+			"url":"Product URL",
+			"image_url":
+				[
+					"PRODUCT IMAGE"
+				]
+			
+			"options":
+				[
+					{
+						"option1":"POPPY",
+						"option2":"X-SMALL",
+						"alt_images":
+							[
+								"PRODUCT SUB IMAGE URL",
+								"PRODUCT SUB IMAGE URL",
+								"PRODUCT SUB IMAGE URL"
+							]
+						,"price":"253.00"
+					}
+					,{
+						"option1":"POPPY",
+						"option2":"SMALL",
+						"alt_images":
+							[
+								"PRODUCT SUB IMAGE URL",
+								"PRODUCT SUB IMAGE URL",
+								"PRODUCT SUB IMAGE URL"
+							]
+						,"price":"253.00"
+					}
+				],
+			"wizwid_brand_id":"091623",
+			"wizwid_category_id":"001105371",
+			"wizwid_store_id":"156475"
+		}
+	]
+}'
+ http://renewalapi.wizwid.com/API/handler/wizwid/kr/Product-AddShopExternal
 ```    
 
 
