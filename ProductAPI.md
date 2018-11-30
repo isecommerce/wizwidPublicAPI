@@ -37,6 +37,8 @@ To create an Product, do a POST request to the above method with the parameters 
   - `option2`: **`String`**
   - `alt_images`: **`String`**
   
+  Without the option 
+   - `option`: **`String`** (value:Default} ex)  "options":[{option:"Default"}]	
   
 ##### Responses
 
