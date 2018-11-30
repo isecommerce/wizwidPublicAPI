@@ -18,3 +18,9 @@ To create an Product, do a POST request to the above method with the parameters 
 
 - `Product` 
   - `store_product_id`: **`String`**
+  - `name`: **`String`**  (name can not exceed 50 bytes)
+  - `description`: **`String`**  (name can not exceed 50 bytes)
+  - `original_price`: **`String`**  
+  - `offering_price`: **`String`**
+  - `url`: **`String`**
+  - `image_url`: **`String`**
