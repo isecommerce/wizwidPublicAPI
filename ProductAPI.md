@@ -44,7 +44,7 @@ To create an Product, do a POST request to the above method with the parameters 
 
 - `:[{"store_product_id":"17349","RESULTCODE":"0000","MESSAGE":"SUCESS","ASSORT_ID":"WIZWID_PRODCUT_ID"}]`   
     
-###### Example CURL request
+###### Example  request
 
 ```
 curl -H "Content-Type: application/json" -X POST -d "{ 
@@ -104,3 +104,38 @@ To update an Product, do a POST request to the above method with the parameters 
 ##### Responses
 
 - `:[{"store_product_id":"17349","RESULTCODE":"0000","MESSAGE":"SUCESS","ASSORT_ID":"WIZWID_PRODCUT_ID"}]`   
+
+
+###### Example  request
+
+```
+curl -H "Content-Type: application/json" -X POST -d "{ 
+  'expected_price': {
+    'item_total': 143.0,
+    'local_tax_total': 10.0,
+    'local_shipment_total': 10.0,
+  },
+  'order_reference': 'C434743',
+  'address': {
+    'first_name': 'John',
+    'last_name': 'Doe',
+    'locker_id': 'C434743', # we could use order_reference here?
+    'address': '2344 Main Street',
+    'city': 'Portland',
+    'state': 'OR',
+    'zip': '92703',
+    'phone': '500500500',
+  },
+  'product': {
+    "selected_options": { "option": "Default" },
+    "url": "https://www.thinkgeek.com/product/iiur/?pfm=HP_ProdTab_2_3_Bestsellers_iiur"
+  },
+  'card_details': {
+    'card_type' : 'Mastercard'
+    'card_name': 'Test Name',
+    'card_number': '4111111111111111',
+    'cvv': '123',
+    'expiry_date_month': '12',
+    'expiry_date_year': '2020'
+  }
+}" https://api.snapi.global/orders.json
