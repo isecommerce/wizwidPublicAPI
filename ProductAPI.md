@@ -78,3 +78,29 @@ curl -H "Content-Type: application/json" -X POST -d "{
   }
 }" https://api.snapi.global/orders.json
 ```    
+
+
+####  Product UPDATE POST: http://api.wizwid.com/API/handler/wizwid/kr/Product-UpdateShopExternal
+
+To update an Product, do a POST request to the above method with the parameters below.
+
+###### Params
+
+- `Product` 
+  - `store_product_id`: **`String`**
+  - `name`: **`String`**  (name can not exceed 50 bytes)
+  - `description`: **`String`**  
+  - `original_price`: **`String`**  
+  - `offering_price`: **`String`**
+  
+  
+- `options`   
+  - `option1`: **`String`**
+  - `option2`: **`String`**
+  
+  Without the option 
+   - `option`: **`String`** (value:Default} ex)  "options":[{option:"Default"}]	
+   
+##### Responses
+
+- `:[{"store_product_id":"17349","RESULTCODE":"0000","MESSAGE":"SUCESS","ASSORT_ID":"WIZWID_PRODCUT_ID"}]`   
