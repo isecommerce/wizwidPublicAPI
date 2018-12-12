@@ -47,36 +47,24 @@ To create an Product, do a POST request to the above method with the parameters 
 ###### Example  request
 
 ```
-curl -H "Content-Type: application/json" -X POST -d "{ 
-  'expected_price': {
-    'item_total': 143.0,
-    'local_tax_total': 10.0,
-    'local_shipment_total': 10.0,
-  },
-  'order_reference': 'C434743',
-  'address': {
-    'first_name': 'John',
-    'last_name': 'Doe',
-    'locker_id': 'C434743', # we could use order_reference here?
-    'address': '2344 Main Street',
-    'city': 'Portland',
-    'state': 'OR',
-    'zip': '92703',
-    'phone': '500500500',
-  },
-  'product': {
-    "selected_options": { "option": "Default" },
-    "url": "https://www.thinkgeek.com/product/iiur/?pfm=HP_ProdTab_2_3_Bestsellers_iiur"
-  },
-  'card_details': {
-    'card_type' : 'Mastercard'
-    'card_name': 'Test Name',
-    'card_number': '4111111111111111',
-    'cvv': '123',
-    'expiry_date_month': '12',
-    'expiry_date_year': '2020'
-  }
-}" https://api.snapi.global/orders.json
+{
+	"Product":
+		[{
+			"store_product_id":"123456789",
+	 		"name":"Co. Women's Westlyn Penny Loafer",
+	 		"description":"<p style=\"color:red;\"> Product Description </p>",
+	 		"original_price":"30.4",
+	 		"offering_price":"29.5",
+	 		"url":"https://www.backcountry.com/patagonia-retro-fleece-vest-boys?skid=PAT00KN-NATGNA-XS&ti=U2VhcmNoIFJlc3VsdHM6UmV0cm8tWDoxOjE1OlJldHJvLVg=",
+	 		"image_url":["http://www.img.com/test.jpg",	"http://www.img.com/test1.jpg"],
+	 		"wizwid_category_id":"001088842",
+	 		"wizwid_brand_id":"000000",
+	 		"wizwid_store_id":"101834",
+			"options":[{color:RED,size:M,image:http://xxx.xxx.com/img},{color:RED,size:L,image:http://xxx.xxx.com/img},{color:BLUE,size:M,image:http://xxx.xxx.com/img}]
+	 	}]
+}
+
+
 ```    
 
 
