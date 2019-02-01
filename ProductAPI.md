@@ -47,24 +47,53 @@ To create an Product, do a POST request to the above method with the parameters 
 ###### Example  request
 
 ```
-{
-	"Product":
-		[{
-			"store_product_id":"123456789",
-	 		"name":"Co. Women's Westlyn Penny Loafer",
-	 		"description":"<p style=\"color:red;\"> Product Description </p>",
-	 		"original_price":"30.4",
-	 		"offering_price":"29.5",
-	 		"url":"https://www.backcountry.com/patagonia-retro-fleece-vest-boys?skid=PAT00KN-NATGNA-XS&ti=U2VhcmNoIFJlc3VsdHM6UmV0cm8tWDoxOjE1OlJldHJvLVg=",
-	 		"image_url":["http://www.img.com/test.jpg",	"http://www.img.com/test1.jpg"],
-	 		"wizwid_category_id":"001088842",
-	 		"wizwid_brand_id":"000000",
-	 		"wizwid_store_id":"101834",
-			"options":[{color:RED,size:M,image:http://xxx.xxx.com/img},{color:RED,size:L,image:http://xxx.xxx.com/img},{color:BLUE,size:M,image:http://xxx.xxx.com/img}]
-	 	}]
-}
-
-
+curl -H "Content-Type: application/json" -X POST -d 
+'{"Product":
+	[
+		{
+			"store_product_id":"11365"
+			"name":"Phyliss Heart Pointelle",
+			"description":"description TEST",
+			"original_price":"253.00",
+			"offering_price":"253.00",
+			"url":"Product URL",
+			"image_url":
+				[
+					"PRODUCT IMAGE"
+				]
+			
+			"options":
+				[
+					{
+						"option1":"POPPY",
+						"option2":"X-SMALL",
+						"alt_images":
+							[
+								"PRODUCT SUB IMAGE URL",
+								"PRODUCT SUB IMAGE URL",
+								"PRODUCT SUB IMAGE URL"
+							]
+						,"price":"253.00"
+					}
+					,{
+						"option1":"POPPY",
+						"option2":"SMALL",
+						"alt_images":
+							[
+								"PRODUCT SUB IMAGE URL",
+								"PRODUCT SUB IMAGE URL",
+								"PRODUCT SUB IMAGE URL"
+							]
+						,"price":"253.00"
+					}
+				],
+			"wizwid_brand_id":"091623",
+			"wizwid_category_id":"001105371",
+			"wizwid_store_id":"156475"
+		}
+	]
+}'
+ http://renewalapi.wizwid.com/API/handler/wizwid/kr/Product-AddShopExternal
 ```    
 
 
